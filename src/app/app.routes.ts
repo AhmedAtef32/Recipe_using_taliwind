@@ -15,26 +15,27 @@ import { SideComponent } from './shared/pages/side/side/side.component';
 import { StarterComponent } from './shared/pages/Starter/starter/starter.component';
 import { VeganComponent } from './shared/pages/Vegan/vegan/vegan.component';
 import { VegetarianComponent } from './shared/pages/vegetarian/vegetarian/vegetarian.component';
+import { NotFoundComponent } from './Feature/pages/not-found/not-found.component';
 
 export const routes: Routes = [
   {path: '', redirectTo: 'Home', pathMatch: 'full'},
-  {path: 'Home', component: HomeComponent , children:[
+  {path: 'Home', component: HomeComponent  , children:[
     {path: '', redirectTo: 'meals', pathMatch: 'full'},
-    {path: 'meals', component: MealsComponent},
-    {path: 'Beef', component: BeefComponent},
-    {path: 'Breakfast', component: BreakFastComponent},
-    {path: 'Chicken', component: ChickenComponent},
-    {path: 'Dessert', component: DessertComponent},
-    {path: 'Goat', component: GoatComponent},
-    {path: 'Lamb', component: LambComponent},
-    {path: 'Miscellaneous', component: MiscellaneousComponent},
-    {path: 'Seafood', component: SeaFoodComponent},
-    {path: 'Side', component: SideComponent},
-    {path: 'Starter', component: StarterComponent},
-    {path: 'Starter', component: StarterComponent},
-    {path: 'Vegan', component: VeganComponent},
-    {path: 'vegetarian', component: VegetarianComponent},
+    {path: 'meals', component: MealsComponent ,title: 'All Meals'},
+    {path: 'Beef', component: BeefComponent ,title: 'Beef'},
+    {path: 'Breakfast', component: BreakFastComponent,title: 'Breakfast'},
+    {path: 'Chicken', component: ChickenComponent,title: 'Chicken'},
+    {path: 'Dessert', component: DessertComponent,title: 'Dessert'},
+    {path: 'Goat', component: GoatComponent,title: 'Goat'},
+    {path: 'Lamb', component: LambComponent,title: 'Lamb'},
+    {path: 'Miscellaneous', component: MiscellaneousComponent,title: 'Miscellaneous'},
+    {path: 'Seafood', component: SeaFoodComponent,title: 'Seafood'},
+    {path: 'Side', component: SideComponent,title: 'Side'},
+    {path: 'Starter', component: StarterComponent,title: 'Starter'},
+    {path: 'Vegan', component: VeganComponent,title: 'Vegan'},
+    {path: 'vegetarian', component: VegetarianComponent,title: 'vegetarian'},
   ]},
   {path: 'Details', component: DetailsComponent},
+  {path: '**', component: NotFoundComponent},
 
 ];
