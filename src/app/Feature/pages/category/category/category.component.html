@@ -1,0 +1,26 @@
+<div class="my-6">
+  <ul class=" hidden  md:flex  gap-5 flex-wrap max-w-screen-xl border-b pb-6 mb-10  ">
+    <li>
+      <a class="border-gray-300 border-2 px-3 rounded-s-full rounded-e-full font-medium py-1 " routerLink="meals"
+        routerLinkActive="!border-black !bg-black font-medium !text-white">All</a>
+    </li>
+
+    @for (category of categorys; track $index) {
+
+    <li>
+      <a class="border-gray-300 border-2 px-3 rounded-s-full rounded-e-full font-medium py-1" [routerLink]="category"
+        routerLinkActive="!border-black !bg-black font-medium !text-white">{{category}}</a>
+    </li>
+    }
+
+  </ul>
+
+
+
+  <select #search (input)="getInputValue()" class="border-gray-300 md:hidden  px-3 w-full rounded-lg py-1">
+    @for (category of categorys; track $index) {
+
+      <option  value="{{category}}"> {{category}} </option>
+     }
+     </select>
+</div>

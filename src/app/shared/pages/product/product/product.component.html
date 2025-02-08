@@ -1,0 +1,22 @@
+<div class="grid md:grid-cols-3 lg:grid-cols-4 gap-10 p-3 md:p-0 mb-6 overflow-hidden">
+  @for (meal of allMeals; track $index) {
+  <div class="pt-8">
+    <div class="product__card bg-white  rounded-[40px] text-center group hover:scale-105 transition-all duration-300">
+      <div class="proudct__img w-3/4  mx-auto translate-y-[-20px]  ">
+        <img [src]="meal.strMealThumb"
+          class="rounded-full drop-shadow-2xl group-hover:rotate-[360deg] transition-all duration-1000"
+          alt="kcv6hj1598733479">
+      </div>
+      <h3 class="mt-3 mb-1  text-[20px] font-semibold">{{meal.strMeal}}</h3>
+      <p class="text-[#21ba75] mb-3"><i class="fa-solid fa-earth-americas"></i> {{meal.strArea ? meal.strArea :
+        'Unknown'}} </p>
+      <button routerLink="/Details"
+        class="p-2 px-8 bg-[#21ba75] text-white rounded-full mb-4 hover:scale-110 hover:bg-[#059669] transition-all duration-500">view
+        Recipe</button>
+    </div>
+  </div>
+  }
+
+
+
+</div>
